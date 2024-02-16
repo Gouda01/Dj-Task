@@ -15,7 +15,7 @@ class Post (models.Model) :
     publish_date    = models.DateTimeField(default=timezone.now)
     tags            = TaggableManager()
     image           = models.ImageField(upload_to='post')
-    slug = models.SlugField(blank=True,null=True,unique=True)
+    slug            = models.SlugField(blank=True,null=True,unique=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)

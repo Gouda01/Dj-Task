@@ -18,11 +18,18 @@ from django.contrib import admin
 from django.urls import path , include
 from django.conf import settings
 from django.conf.urls.static import static
+from blog.api import post_list_api 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('posts/', include('blog.urls')),
+
+
+
+    #API
+    path('posts/api',post_list_api),
+    # path('posts/api/<int:pk>',post_detail_api),
 
 ]
 
