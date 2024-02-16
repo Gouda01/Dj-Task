@@ -42,7 +42,7 @@
                                 <div class="col-md-6 col-lg-6">
                                     <div class="blog-card">
                                         <div class="blog-media">
-                                            <a class="blog-img" href="#">
+                                            <a class="blog-img" href="/posts/{{ object.slug }}">
                                                 <img src="{{ object.image.url }}" alt="blog">
                                             </a>
                                         </div>
@@ -58,12 +58,12 @@
                                                 </li>
                                             </ul>
                                             <h4 class="blog-title">
-                                                <a href="blog-details.html">{{ object.title }}</a>
+                                                <a href="/posts/{{ object.slug }}">{{ object.title }}</a>
                                             </h4>
                                             <p class="blog-desc">
-                                                {{ object.content }}
+                                                {{ object.content |truncatewords:50 }}
                                             </p>
-                                            <a class="blog-btn" href="#">
+                                            <a class="blog-btn" href="/posts/{{ object.slug }}">
                                                 <span>read more</span>
                                                 <i class="icofont-arrow-right"></i>
                                             </a>
