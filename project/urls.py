@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path , include
 from django.conf import settings
 from django.conf.urls.static import static
-from blog.api import post_list_api 
+from blog.api import PostListApi,PostDetailApi
 
 
 urlpatterns = [
@@ -28,8 +28,8 @@ urlpatterns = [
 
 
     #API
-    path('posts/api',post_list_api),
-    # path('posts/api/<int:pk>',post_detail_api),
+    path('api/posts',PostListApi.as_view()),
+    path('api/posts/<int:pk>',PostDetailApi.as_view()),
 
 ]
 
